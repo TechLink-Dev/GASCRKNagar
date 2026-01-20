@@ -1,4 +1,4 @@
-<header class="navbar">
+<header class="navbar" (click)="closeDropdown()">
     <div class="navbar-container">
         <!-- Logo  -->
         <div class="navbar-logo">
@@ -34,12 +34,12 @@
         </a>
 
         <!-- Academics Dropdown -->
-        <div class="nav-item dropdown">
-            <button (click)="toggleDropdown()" class="nav-link dropdown-toggle">
+        <div class="nav-item dropdown" (click)="$event.stopPropagation()">
+            <button (click)="toggleDropdownAcademic()" class="nav-link dropdown-toggle">
             Academics
             <span class="dropdown-arrow">▼</span>
             </button>
-            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+            <div class="dropdown-menu" [class.show]="isDropdownOpenAcademic">
             <a routerLink="/academics/programs" 
                 (click)="closeDropdown(); closeMobileMenu()"
                 class="dropdown-item">
@@ -59,12 +59,12 @@
         </div>
 
         <!-- Admissions Dropdown -->
-        <div class="nav-item dropdown">
-            <button (click)="toggleDropdown()" class="nav-link dropdown-toggle">
+        <div class="nav-item dropdown" (click)="$event.stopPropagation()">
+            <button (click)="toggleDropdownAdmission()" class="nav-link dropdown-toggle">
             Admissions
             <span class="dropdown-arrow">▼</span>
             </button>
-            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+            <div class="dropdown-menu" [class.show]="isDropdownOpenAdmission">
             <a routerLink="/admissions/overview" 
                 (click)="closeDropdown(); closeMobileMenu()"
                 class="dropdown-item">

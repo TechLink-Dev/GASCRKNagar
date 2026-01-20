@@ -21,16 +21,16 @@ export class Footer {
   ];
 
   contactInfo = {
-    phone: '+91-1234-567890',
-    email: 'info@gascr.edu.in',
-    address: 'Government College, City Name, State, Country'
+    phone: '+91 12345-67890',
+    email: 'info@gascrknagar.co.in',
+    address: 'Government Arts and Science College, No:183 B Block, AA Scheme Road, Kamarajar Salai, RK Nagar, Tondiarpet, Chennai - 600 081'
   };
 
   socialLinks = [
-    { name: 'Facebook', url: 'https://facebook.com', icon: '📱' },
-    { name: 'Twitter', url: 'https://twitter.com', icon: '𝕏' },
-    { name: 'LinkedIn', url: 'https://linkedin.com', icon: '💼' },
-    { name: 'Instagram', url: 'https://instagram.com', icon: '📷' }
+    { name: 'Facebook', url: 'https://facebook.com', icon: 'assets/images/icons/fb.png' },
+    { name: 'Twitter', url: 'https://twitter.com', icon: 'assets/images/icons/X.png' },
+    { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'assets/images/icons/linkedin.png' },
+    { name: 'Instagram', url: 'https://instagram.com', icon: 'assets/images/icons/insta.png' }
   ];
 
   ngOnInit() {

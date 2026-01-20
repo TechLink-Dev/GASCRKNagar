@@ -10,18 +10,28 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class Header {
   isMobileMenuOpen = false;
-  isDropdownOpen = false;
+  isDropdownOpenAcademic = false;
+  isDropdownOpenAdmission = false;
 
   ngOnInit() {
     console.log('Header Component Initialized');
   }
 
+  ngOnClick(){
+  this.isDropdownOpenAcademic = false;
+  this.isDropdownOpenAdmission = false;
+  }
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  toggleDropdown() {
-    this.isDropdownOpen = !this.isDropdownOpen;
+  toggleDropdownAcademic() {
+    this.isDropdownOpenAcademic = !this.isDropdownOpenAcademic;
+    this.isDropdownOpenAdmission = false;
+  }
+  toggleDropdownAdmission() {
+    this.isDropdownOpenAdmission = !this.isDropdownOpenAdmission;
+    this.isDropdownOpenAcademic = false;
   }
 
   closeMobileMenu() {
@@ -29,7 +39,8 @@ export class Header {
   }
 
   closeDropdown() {
-    this.isDropdownOpen = false;
+    this.isDropdownOpenAcademic = false;
+    this.isDropdownOpenAdmission = false;
   }
 
 }
