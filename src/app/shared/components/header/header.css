@@ -1,0 +1,239 @@
+/* Header Navigation Styles */
+.navbar {
+  background-color: #1e3a5f;
+  color: white;
+  padding: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  max-width: 100%;
+}
+
+/* Logo Section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+}
+
+.college-name {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Menu */
+.navbar-menu {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffc107;
+}
+
+.nav-link.active {
+  background-color: #ffc107;
+  color: #1e3a5f;
+  border-radius: 4px;
+}
+
+/* Dropdown */
+.nav-item {
+  position: relative;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #0f2540;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  min-width: 200px;
+  z-index: 1001;
+}
+
+.dropdown-menu.show {
+  display: flex;
+}
+
+.dropdown-item {
+  color: white;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  transition: all 0.2s ease;
+  display: block;
+  border: none;
+  background: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+}
+
+.grievance-link {
+  background-color: #d32f2f;
+  margin-left: 1rem;
+  border-radius: 4px;
+}
+
+.grievance-link:hover {
+  background-color: #b71c1c;
+  color: white;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 0.4rem;
+  padding: 0.5rem;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0.5rem 1rem;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    z-index: 1002;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background-color: #1e3a5f;
+    padding: 1rem 0;
+    border-radius: 0;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+  }
+
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background-color: #0f2540;
+    display: none;
+    margin-top: 0;
+    min-width: auto;
+  }
+
+  .dropdown-menu.show {
+    display: flex;
+  }
+
+  .dropdown-item {
+    padding-left: 2rem;
+  }
+
+  .grievance-link {
+    margin-left: 1.5rem;
+  }
+
+  .college-name {
+    display: none;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo {
+    gap: 0.5rem;
+  }
+
+  .navbar-container {
+    padding: 0.5rem;
+  }
+
+  .mobile-menu-toggle span {
+    width: 20px;
+  }
+
+  .nav-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+}

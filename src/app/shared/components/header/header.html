@@ -1,0 +1,140 @@
+<header class="navbar">
+    <div class="navbar-container">
+        <!-- Logo  -->
+        <div class="navbar-logo">
+        <img src="assets/images/logo/college-logo.png" alt="College Logo" class="logo-img">
+        <span class="college-name">Government College</span>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" (click)="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="navbar-menu" [class.active]="isMobileMenuOpen">
+        
+        <!-- Home -->
+        <a routerLink="/home" 
+            routerLinkActive="active" 
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="closeMobileMenu()"
+            class="nav-link">
+            Home
+        </a>
+
+        <!-- About -->
+        <a routerLink="/about" 
+            routerLinkActive="active"
+            (click)="closeMobileMenu()"
+            class="nav-link">
+            About
+        </a>
+
+        <!-- Academics Dropdown -->
+        <div class="nav-item dropdown">
+            <button (click)="toggleDropdown()" class="nav-link dropdown-toggle">
+            Academics
+            <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+            <a routerLink="/academics/programs" 
+                (click)="closeDropdown(); closeMobileMenu()"
+                class="dropdown-item">
+                Programs
+            </a>
+            <a routerLink="/academics/courses" 
+                (click)="closeDropdown(); closeMobileMenu()"
+                class="dropdown-item">
+                Courses
+            </a>
+            <a routerLink="/academics/faculty" 
+                (click)="closeDropdown(); closeMobileMenu()"
+                class="dropdown-item">
+                Faculty
+            </a>
+            </div>
+        </div>
+
+        <!-- Admissions Dropdown -->
+        <div class="nav-item dropdown">
+            <button (click)="toggleDropdown()" class="nav-link dropdown-toggle">
+            Admissions
+            <span class="dropdown-arrow">▼</span>
+            </button>
+            <div class="dropdown-menu" [class.show]="isDropdownOpen">
+            <a routerLink="/admissions/overview" 
+                (click)="closeDropdown(); closeMobileMenu()"
+                class="dropdown-item">
+                Overview
+            </a>
+            <a routerLink="/admissions/requirements" 
+                (click)="closeDropdown(); closeMobileMenu()"
+                class="dropdown-item">
+                Requirements
+            </a>
+            <a routerLink="/admissions/apply" 
+                (click)="closeDropdown(); closeMobileMenu()"
+                class="dropdown-item">
+                Apply Online
+            </a>
+            <a routerLink="/admissions/fees" 
+                (click)="closeDropdown(); closeMobileMenu()"
+                class="dropdown-item">
+                Fees
+            </a>
+            </div>
+        </div>
+
+        <!-- Campus -->
+        <a routerLink="/campus/facilities" 
+            routerLinkActive="active"
+            (click)="closeMobileMenu()"
+            class="nav-link">
+            Campus
+        </a>
+
+        <!-- News -->
+        <a routerLink="/news" 
+            routerLinkActive="active"
+            (click)="closeMobileMenu()"
+            class="nav-link">
+            News
+        </a>
+
+        <!-- Events -->
+        <a routerLink="/events" 
+            routerLinkActive="active"
+            (click)="closeMobileMenu()"
+            class="nav-link">
+            Events
+        </a>
+
+        <!-- Student Life -->
+        <a routerLink="/student-life/clubs" 
+            routerLinkActive="active"
+            (click)="closeMobileMenu()"
+            class="nav-link">
+            Student Life
+        </a>
+
+        <!-- Contact -->
+        <a routerLink="/contact" 
+            routerLinkActive="active"
+            (click)="closeMobileMenu()"
+            class="nav-link">
+            Contact
+        </a>
+
+        <!-- Grievance -->
+        <a routerLink="/grievance" 
+            routerLinkActive="active"
+            (click)="closeMobileMenu()"
+            class="nav-link grievance-link">
+            Grievance
+        </a>
+        </nav>
+    </div>
+</header>
