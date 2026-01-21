@@ -1,10 +1,36 @@
 import { Routes } from '@angular/router';
+import { Auth } from './core/services/auth';
+import { adminGuard } from './core/guards/admin-guard';
 
 export const routes: Routes = [
     {
         path: '',
         redirectTo: 'home',
         pathMatch: 'full'
+    },
+    {
+        path: 'login',
+        loadComponent: () => import('./features/auth/pages/login/login').then(m => m.Login)
+    },
+    {
+        path: 'dashboard',
+        loadComponent: () => import('./features/dashboard/pages/dashboard/dashboard').then(m => m.Dashboard),
+        canActivate: [Auth]
+    },
+
+    {
+        path: 'admin/users',
+        loadComponent: () => import('./features/admin/pages/user-management/user-management').then(m => m.UserManagement),
+        canActivate: [Auth, adminGuard]
+    },
+
+    {
+        path: 'news',
+        loadComponent: () => import('./features/news/pages/news-list/news-list').then(m => m.NewsList)
+    },
+    {
+        path: 'register',
+        loadComponent: () => import('./features/auth/pages/register/register').then(m => m.Register)
     },
     {
         path: 'home',

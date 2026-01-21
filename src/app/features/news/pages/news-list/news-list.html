@@ -1,1 +1,26 @@
-<p>news-list works!</p>
+<div class="news-container">
+    <h1>Latest News</h1>
+
+    <div *ngIf="error" class="error-message">{{ error }}</div>
+    <div *ngIf="loading" class="loading">Loading news...</div>
+
+    <div *ngIf="!loading && paginatedNews.length" class="news-grid">
+        <div class="news-card" *ngFor="let news of paginatedNews">
+            <img *ngIf="news.image" [src]="news.image" [alt]="news.title" class="news-image" />
+            <div class="news-content">
+                <h3>{{ news.title }}</h3>
+                <p class="meta">By {{ news.author }} | {{ news.publishedDate | date: 'MMM dd, yyyy' }}</p>
+                <p class="description">{{ news.description }}</p>
+                <a [routerLink]="['/news', news.id]" class="read-more">Read More →</a>
+            </div>
+        </div>
+    </div>
+
+    <app-pagination [currentPage]="currentPage" [totalPages]="totalPages" [pageNumbers]="pageNumbers"
+        (pageChange)="onPageChange($event)">
+    </app-pagination>
+
+    <div *ngIf="!loading && paginatedNews.length === 0" class="no-results">
+        No news available at the moment.
+    </div>
+</div>

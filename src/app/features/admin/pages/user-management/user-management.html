@@ -1,0 +1,39 @@
+<div class="admin-container">
+    <h1>User Management</h1>
+
+    <div class="controls">
+        <select [(ngModel)]="filterRole" class="filter-select">
+            <option value="">All Roles</option>
+            <option *ngFor="let role of roles" [value]="role">{{ role | titlecase }}</option>
+        </select>
+        <button (click)="exportUsers()" class="export-btn">📥 Export to CSV</button>
+    </div>
+
+    <table class="users-table">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of getFilteredUsers()">
+                <td>{{ user.email }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.role }}</td>
+                <td>
+                    <span [class.status-active]="user.isActive" [class.status-inactive]="!user.isActive">
+                        {{ user.isActive ? 'Active' : 'Inactive' }}
+                    </span>
+                </td>
+                <td>
+                    <button (click)="toggleUserStatus(user)" class="toggle-btn">Toggle</button>
+                    <button (click)="deleteUser(user.id)" class="delete-btn">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,6 @@
+<div class="search-container">
+    <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch($event)" placeholder="{{ placeholder }}"
+        class="search-input" />
+    <button (click)="onSearch(searchTerm)" class="search-btn">🔍 Search</button>
+    <button *ngIf="searchTerm" (click)="clearSearch()" class="clear-btn">✕ Clear</button>
+</div>
