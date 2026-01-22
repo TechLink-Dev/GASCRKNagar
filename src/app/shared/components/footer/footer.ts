@@ -21,9 +21,10 @@ export class Footer {
   ];
 
   contactInfo = {
-    phone: '+91 12345-67890',
-    email: 'info@gascrknagar.co.in',
-    address: 'Government Arts and Science College, No:183 B Block, AA Scheme Road, Kamarajar Salai, RK Nagar, Tondiarpet, Chennai - 600 081'
+    phone: ' 044-29512558',
+    phone1: ' 044-29560406',
+    email: 'principalgascrknagar@gmail.com',
+    address: 'No.183 B Block, AA Scheme Road,Kamarajar Salai, R.K Nagar,Tondiarpet, Chennai,Tamil Nadu-600 081.'
   };
 
   socialLinks = [
