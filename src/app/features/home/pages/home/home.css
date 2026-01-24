@@ -1,0 +1,29 @@
+.announcement-bar {
+    background-color: #FFD700;
+    color: #003366;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 72px;
+    width: 100%;
+    z-index: 999;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.announcement-content {
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.announcement-icon {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
+.announcement-content marquee {
+    flex: 1;
+    font-weight: bold;
+    font-size: 1rem;
+}
