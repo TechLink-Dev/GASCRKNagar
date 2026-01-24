@@ -31,7 +31,7 @@ export class Footer {
     { name: 'Facebook', url: 'https://facebook.com', icon: 'assets/images/icons/fb.png' },
     { name: 'Twitter', url: 'https://twitter.com', icon: 'assets/images/icons/X.png' },
     { name: 'LinkedIn', url: 'https://linkedin.com', icon: 'assets/images/icons/linkedin.png' },
-    { name: 'Instagram', url: 'https://instagram.com', icon: 'assets/images/icons/insta.png' }
+    { name: 'Youtube', url: 'https://youtube.com', icon: 'assets/images/icons/youtube.png' }
   ];
 
   ngOnInit() {
