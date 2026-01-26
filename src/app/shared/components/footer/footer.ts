@@ -38,3 +38,4 @@ export class Footer {
     console.log('Footer Component Initialized');
   }
 }
+

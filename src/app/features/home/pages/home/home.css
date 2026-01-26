@@ -1,9 +1,10 @@
 .announcement-bar {
-    background-color: #FFD700;
+    background-color: #32e0c4;
     color: #003366;
     padding: 0.5rem 0;
     position: fixed;
-    top: 72px;
+    top: 70px;
+    left: 0px;
     width: 100%;
     z-index: 999;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -27,3 +28,45 @@
     font-weight: bold;
     font-size: 1rem;
 }
+
+/* image moving slot */
+
+ .slider-container {
+            position: relative;
+            width: 1450px;
+            height: 400px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 25px;
+            margin-left: -10px;
+        }
+        .slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+        }
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        button {
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }

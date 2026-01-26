@@ -44,3 +44,6 @@ export class Home {
     });
   }
 }
+
+// image moving slot
+
