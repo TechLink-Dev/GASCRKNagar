@@ -1,8 +1,27 @@
- <div class="announcement-bar">
-        <div class="announcement-content">
-            <span class="announcement-icon">📢</span>
-            <marquee behavior="scroll" direction="left" scrollamount="5">
-                Welcome to Government College! | Admission Open for 2024-2025 | New Courses Available | Campus Events Coming Soon | Contact us for more information
-            </marquee>
+<div class="announcement-bar">
+    <div class="announcement-content">
+        <span class="announcement-icon">📢</span>
+        <marquee behavior="scroll" direction="left" scrollamount="5">
+            Welcome to Government College! | Admission Open for 2024-2025 | New Courses Available | Campus Events Coming
+            Soon | Contact us for more information
+        </marquee>
+    </div>
+</div>
+<div class="slider-container">
+    <div class="slider" #slider>
+        <div class="slide">
+            <img src="assets/images/download1.jpeg" alt="Image 1">
+        </div>
+        <div class="slide">
+            <img src="assets/images/download2.jpeg" alt="Image 2">
+        </div>
+        <div class="slide">
+            <img src="assets/images/download3.jpeg" alt="Image 3">
         </div>
     </div>
+
+    <div class="buttons">
+        <button (click)="prev()">&lt;</button>
+        <button (click)="next()">&gt;</button>
+    </div>
+</div>
