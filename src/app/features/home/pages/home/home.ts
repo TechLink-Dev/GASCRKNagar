@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Api } from '../../../../core/services/api';
 import { CommonModule } from '@angular/common';
 
@@ -20,7 +20,31 @@ export class Home {
   ngOnInit() {
     this.loadHomeData();
   }
+  
+  @ViewChild('slider', { static: true }) slider!: ElementRef<HTMLDivElement>;
 
+  currentIndex = 0;
+  totalSlides = 0;
+
+  ngAfterViewInit(): void {
+    this.totalSlides = this.slider.nativeElement.children.length;
+  }
+
+  updateSlider(): void {
+    this.slider.nativeElement.style.transform =
+      `translateX(-${this.currentIndex * 100}%)`;
+  }
+
+  next(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+    this.updateSlider();
+  }
+
+  prev(): void {
+    this.currentIndex =
+      (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+    this.updateSlider();
+  }
   loadHomeData() {
     this.apiService.getAllCourses().subscribe({
       next: (data) => this.courses = data,
